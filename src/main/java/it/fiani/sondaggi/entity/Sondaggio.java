@@ -1,6 +1,9 @@
 package it.fiani.sondaggi.entity;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 
 @Entity
 
@@ -10,15 +13,20 @@ public class Sondaggio {
 //	2. Sei maschio o femmina
 //	3. Quanto sei alto (Centimetri)
 
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY) // annotazioni obbligatorie per la primarikey
+	Long id;
+
 	private String annoNascita;
 	private String sesso;
 	private int altezza;
 
-	public Sondaggio(String annoNascita, String sesso, int altezza) {
-		super();
-		this.annoNascita = annoNascita;
-		this.sesso = sesso;
-		this.altezza = altezza;
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
 	}
 
 	public String getAnnoNascita() {
@@ -47,7 +55,8 @@ public class Sondaggio {
 
 	@Override
 	public String toString() {
-		return "Sondaggio [annoNascita=" + annoNascita + ", sesso=" + sesso + ", altezza=" + altezza + "]";
+		return "Sondaggio [id=" + id + ", annoNascita=" + annoNascita + ", sesso=" + sesso + ", altezza=" + altezza
+				+ "]";
 	}
 
 }

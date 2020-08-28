@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-@RequestMapping("/sondaggi/")
+@RequestMapping("/sondaggi")
 
 public class ControllerSondaggi {
 
@@ -16,13 +16,13 @@ public class ControllerSondaggi {
 	}
 
 	@GetMapping("/new")
-	public String formSondaggi() {
+	public String formSondaggio() {
 		return "form-sondaggi";
 	}
 
 	@PostMapping("/")
-	public String salvaSondaggi() {
-		return "redirect:/";
+	public String creaSondaggio() {
+		return "redirect:/sondaggi";
 	}
 
 	@GetMapping("/{id}")
