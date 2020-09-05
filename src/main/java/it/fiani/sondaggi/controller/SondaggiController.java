@@ -1,14 +1,21 @@
 package it.fiani.sondaggi.controller;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+
+import it.fiani.sondaggi.entity.Sondaggio;
+import it.fiani.sondaggi.service.SondaggiService;
 
 @Controller
 @RequestMapping("/sondaggi")
 
-public class ControllerSondaggi {
+public class SondaggiController {
+	@Autowired
+	SondaggiService sondaggiService;
 
 	@GetMapping("/")
 	public String indexSondaggi() {
@@ -21,12 +28,12 @@ public class ControllerSondaggi {
 	}
 
 	@PostMapping("/")
-	public String creaSondaggio() {
+	public String creaSondaggio(Sondaggio sondaggio) {
 		return "redirect:/sondaggi";
 	}
 
 	@GetMapping("/{id}")
-	public String dettagliSondaggio() {
+	public String dettagliSondaggio(@PathVariable long id) {
 		return null;
 	}
 
