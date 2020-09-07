@@ -32,7 +32,7 @@ public class SondaggiController {
 	@PostMapping("/")
 	public String creaSondaggio(Sondaggio sondaggio) {
 		sondaggiService.salvaSondaggio(sondaggio);
-		return "redirect:/sondaggi";
+		return "redirect:/sondaggi/";
 	}
 
 	@GetMapping("/{id}")

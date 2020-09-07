@@ -2,41 +2,66 @@
 <html xmlns:th="http://www.tymeleaf.org" lang="it">
 
 <head>
-<title>Home page Sondaggi</title>
-<meta charset="UTF-8">
-<meta name="author" content="Christian Luzzetti">
-<meta name="description" content="Sito web di test">
+<title>Index Sondaggi</title>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<!-- BOOTSTRAP -->
+<meta name="description" content="">
+<meta name="author" content="Simone Fiani">
 <link rel="stylesheet"
 	href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
-
-<!-- FONTAWESOME -->
 <link
 	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css"
 	rel="stylesheet">
 </head>
+
 <body>
-<!-- CONTENUTO -->
-<h1>Lista Sondaggi</h1>
-     
-     
-     <div th:each="s: ${listaSondaggi}">
-	     <p th:text="${s}"></p>
-     </div>
 
-     <div>
-         <a href="/clienti/new" class="btn btn-primary">Aggiungi Cliente</a>
-     </div>
-     
-<!-- .CONTENUTO -->
 
-<!-- Scripts della pagina -->
-<script
-	src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js"></script>
+	<h1>Lista sondaggi</h1>
 	
+	<p>di seguito la lista dei sondaggi:</p>
+
+	<div class="container">
+		<div class="row">
+			<div class="col-md-6 offset-md-3">
+				<table class="table table-hover">
+
+					<thead class="thead thead-dark">
+						<tr>
+							<th>Anno di nascita</th>
+							<th>Sesso</th>
+							<th>Altezza</th>
+							<th></th>
+							<th><a href="/sondaggi/new"><em class="fas fa-plus-circle text-primary"></em></a></th>
+							<th></th>
+						</tr>
+					</thead>
+
+					<tbody>
+						<tr th:each="s: ${listaSondaggi}">
+							<td th:text="${s.annoNascita}"></td>
+							<td th:text="${s.sesso}"></td>
+							<td th:text="${s.altezza}"></td>
+
+							<td><a th:href="${s.id}"> <em
+									class="fas fa-info-circle text-info"></em>
+							</a></td>
+<!--  
+							<td><a th:href="@{/registi/} + ${a.id} + '/edit'"><em
+									class="fas fa-pen text-warning"></em></a></td>
+									
+							<td><a th:href="${a.id} + '/delete'"><em
+									class="fas fa-trash text-danger"></em></a></td>
+-->
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+
+
+	<script
+		src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js"></script>
 </body>
 
 </html>

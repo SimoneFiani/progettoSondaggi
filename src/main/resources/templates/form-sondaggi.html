@@ -1,0 +1,44 @@
+<!doctype html>
+<html xmlns:th="http://www.tymeleaf.org" lang="it">
+
+<head>
+<title>Form Sondaggi</title>
+<meta charset="UTF-8">
+<meta name="author" content="Christian Luzzetti">
+<meta name="description" content="Sito web di test">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- BOOTSTRAP -->
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+
+<!-- FONTAWESOME -->
+<link
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css"
+	rel="stylesheet">
+</head>
+<body>
+<!-- CONTENUTO -->
+<p>Compila i seguenti campi:</p>
+<form action="/sondaggi/" method="POST">
+   <p>Anno di nascita</p>
+      <input type="text" name="annoNascita">
+   <p>Sesso</p>
+      <input type="text" name="sesso">
+   <p>Altezza</p>
+      <input type="text" name="altezza">
+      
+      <input type="submit" name="crea">
+
+</form>
+
+<!-- .CONTENUTO -->
+
+<!-- Scripts della pagina -->
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js"></script>
+	
+</body>
+
+</html>
