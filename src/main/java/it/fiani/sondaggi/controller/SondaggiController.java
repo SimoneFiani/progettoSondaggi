@@ -2,6 +2,7 @@ package it.fiani.sondaggi.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -18,7 +19,8 @@ public class SondaggiController {
 	SondaggiService sondaggiService;
 
 	@GetMapping("/")
-	public String indexSondaggi() {
+	public String indexSondaggi(Model datiInOutput) {
+		datiInOutput.addAttribute("listaSondaggi", sondaggiService.getListaSondaggi());
 		return "index-sondaggi";
 	}
 
@@ -29,6 +31,7 @@ public class SondaggiController {
 
 	@PostMapping("/")
 	public String creaSondaggio(Sondaggio sondaggio) {
+		sondaggiService.salvaSondaggio(sondaggio);
 		return "redirect:/sondaggi";
 	}
 
