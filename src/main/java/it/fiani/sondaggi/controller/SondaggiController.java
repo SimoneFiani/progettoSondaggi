@@ -37,7 +37,7 @@ public class SondaggiController {
 
 	@GetMapping("/{id}")
 	public String dettagliSondaggio(@PathVariable long id) {
-		return null;
+		return "dettaglio-sondaggio";
 	}
 
 }
