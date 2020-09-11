@@ -26,6 +26,9 @@ public class SondaggiController {
 
 	@GetMapping("/new")
 	public String formSondaggio() {
+
+		System.out.println("faccio una prova per GitHub");
+
 		return "form-sondaggi";
 	}
 
