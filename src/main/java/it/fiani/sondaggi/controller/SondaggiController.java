@@ -27,8 +27,6 @@ public class SondaggiController {
 	@GetMapping("/new")
 	public String formSondaggio() {
 
-		System.out.println("faccio una prova per GitHub");
-
 		return "form-sondaggi";
 	}
 
@@ -40,6 +38,7 @@ public class SondaggiController {
 
 	@GetMapping("/{id}")
 	public String dettagliSondaggio(@PathVariable long id) {
+		// TODO: metodo da implementare
 		return "dettaglio-sondaggio";
 	}
 
